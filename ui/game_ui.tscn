@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://givci6lhv02o"]
+
+[ext_resource type="Texture2D" uid="uid://b6w1cqc5wasno" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_h2yaa"]
+[ext_resource type="Script" path="res://ui/game_ui.gd" id="1_jk85u"]
+[ext_resource type="Texture2D" uid="uid://b731moddmiv7" path="res://addons/Tiny Swords/Resources/Resources/M_Idle.png" id="3_78cc6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ajuij"]
+texture = ExtResource("1_h2yaa")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sr6iq"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqgcv"]
+atlas = ExtResource("3_78cc6")
+region = Rect2(40, 48, 56, 56)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_jk85u")
+
+[node name="timer_label" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "08:50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -283.0
+offset_top = 17.0
+offset_right = -257.0
+offset_bottom = 57.0
+grow_horizontal = 0
+scale = Vector2(7.83739, 1.83437)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ajuij")
+
+[node name="meat_label" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1.54565
+offset_top = 1.09029
+offset_right = 94.5456
+offset_bottom = 35.0903
+grow_horizontal = 2
+scale = Vector2(0.162156, 0.707718)
+text = "50"
+label_settings = SubResource("LabelSettings_sr6iq")
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 6.12448
+offset_top = -5.45146
+offset_right = 134.124
+offset_bottom = 122.549
+scale = Vector2(0.0563772, 0.276543)
+texture = SubResource("AtlasTexture_uqgcv")
